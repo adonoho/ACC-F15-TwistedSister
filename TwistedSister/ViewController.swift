@@ -10,9 +10,21 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var twistedView: TwistedView?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        if twistedView == nil {
+
+            let frame = view.bounds
+            let tv = TwistedView(frame: frame)
+
+            tv.backgroundColor = UIColor.whiteColor()
+            view.addSubview(tv)
+
+            twistedView = tv
+        }
     }
 
     override func didReceiveMemoryWarning() {
